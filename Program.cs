@@ -13,9 +13,11 @@ namespace DataStructuresAndAlgorithms
             string reverseStringIgnoringSpecialChars = ReverseStringIgnoringSpecialChars(word);
             string reverseString = ReverseString(word.ToCharArray());
             string reverseWords = ReverseWordOrder(word);
+            bool palindromeCheck = PalindromeCheck(word);
             Console.Write(reverseStringIgnoringSpecialChars);
 
-            Console.WriteLine("Reverse String ignoring specials chars - {0}, Reverse entire string - {1}, Reverse words of an entire string - {2}", reverseStringIgnoringSpecialChars, reverseString, reverseWords);
+            Console.WriteLine("Reverse String ignoring specials chars - {0}, Reverse entire string - {1}, Reverse words of an entire string - {2}, Palindrome check - {3}", 
+                reverseStringIgnoringSpecialChars, reverseString, reverseWords, palindromeCheck);
         }
 
         // Reverse entire string
@@ -113,6 +115,24 @@ namespace DataStructuresAndAlgorithms
             }
 
             return result;
+        }
+
+        // Indicate whether a string is Palindrome
+        public static bool PalindromeCheck(string str)
+        {
+            string given = str;
+
+            int r = given.Length - 1, l = 0;
+
+            while (l < r)
+            {
+                if (given[l] != given[r])
+                    return false;
+
+                l++;
+                r--;
+            }
+            return true;
         }
     }
 }

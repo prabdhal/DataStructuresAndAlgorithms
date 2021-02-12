@@ -12,9 +12,10 @@ namespace DataStructuresAndAlgorithms
 
             string reverseStringIgnoringSpecialChars = ReverseStringIgnoringSpecialChars(word);
             string reverseString = ReverseString(word.ToCharArray());
+            string reverseWords = ReverseWordOrder(word);
             Console.Write(reverseStringIgnoringSpecialChars);
 
-            Console.WriteLine("Reverse String ignoring specials chars - {0}, Reverse entire string - {1}", reverseStringIgnoringSpecialChars, reverseString);
+            Console.WriteLine("Reverse String ignoring specials chars - {0}, Reverse entire string - {1}, Reverse words of an entire string - {2}", reverseStringIgnoringSpecialChars, reverseString, reverseWords);
         }
 
         // Reverse entire string
@@ -97,6 +98,21 @@ namespace DataStructuresAndAlgorithms
             return result;
         }
 
-        
+        // Reverse the word order
+        public static string ReverseWordOrder(string str)
+        {
+            string given = str;
+            string result = "";
+
+            string[] givenAry = given.Split(' ');
+
+            for (int i = givenAry.Length - 1; i >= 0; i--)
+            {
+                result += givenAry[i];
+                if (i > 0) result += ' ';
+            }
+
+            return result;
+        }
     }
 }

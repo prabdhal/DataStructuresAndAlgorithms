@@ -12,12 +12,12 @@ namespace DataStructuresAndAlgorithms
 
             string reverseStringIgnoringSpecialChars = ReverseStringIgnoringSpecialChars(word);
             string reverseString = ReverseString(word.ToCharArray());
-            string reverseWords = ReverseWordOrder(word);
+            string reverseWordOrder = ReverseWordOrder(word);
             bool palindromeCheck = PalindromeCheck(word);
-            Console.Write(reverseStringIgnoringSpecialChars);
+            string reverseWords = ReverseWords(word);
 
-            Console.WriteLine("Reverse String ignoring specials chars - {0}, Reverse entire string - {1}, Reverse words of an entire string - {2}, Palindrome check - {3}", 
-                reverseStringIgnoringSpecialChars, reverseString, reverseWords, palindromeCheck);
+            Console.WriteLine("Reverse String ignoring specials chars - {0}, Reverse entire string - {1}, Reverse words of an entire string - {2}, Palindrome check - {3}, Reverse words - {4}", 
+                reverseStringIgnoringSpecialChars, reverseString, reverseWordOrder, palindromeCheck, reverseWords);
         }
 
         // Reverse entire string
@@ -147,16 +147,17 @@ namespace DataStructuresAndAlgorithms
             for (int i = 0; i < givenAry.Length; i++)
             {
                 int r = givenAry[i].Length - 1, l = 0;
-            }
+                string word = givenAry[i];
 
-            while (l < r)
-            {
-                char temp = givenAry[i][r];
-                given[r] = given[l];
-                given[l] = given[r]
+                for (int j = word.Length - 1; j >= 0; j--)
+                {
+                    result += word.Substring(j, 1);
+                }
 
-                l++;
-                r--;
+                if (i < givenAry.Length - 1)
+                    result += ' ';
+
+                Console.WriteLine(result);
             }
 
             return result;

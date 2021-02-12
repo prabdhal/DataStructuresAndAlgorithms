@@ -134,5 +134,32 @@ namespace DataStructuresAndAlgorithms
             }
             return true;
         }
+
+        // Reverse only words of a string
+        public static string ReverseWords(string str)
+        {
+            string given = str;
+            string result = "";
+
+            string[] givenAry = str.Split(' ');
+
+
+            for (int i = 0; i < givenAry.Length; i++)
+            {
+                int r = givenAry[i].Length - 1, l = 0;
+            }
+
+            while (l < r)
+            {
+                char temp = givenAry[i][r];
+                given[r] = given[l];
+                given[l] = given[r]
+
+                l++;
+                r--;
+            }
+
+            return result;
+        }
     }
 }

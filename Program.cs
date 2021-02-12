@@ -11,17 +11,17 @@ namespace DataStructuresAndAlgorithms
             string word = Console.ReadLine();
 
             string reverseStringIgnoringSpecialChars = ReverseStringIgnoringSpecialChars(word);
-            string reverseString = ReverseString(word.ToCharArray());
+            string reverseEntireString = ReverseEntireString(word.ToCharArray());
             string reverseWordOrder = ReverseWordOrder(word);
             bool palindromeCheck = PalindromeCheck(word);
             string reverseWords = ReverseWords(word);
 
             Console.WriteLine("Reverse String ignoring specials chars - {0}, Reverse entire string - {1}, Reverse words of an entire string - {2}, Palindrome check - {3}, Reverse words - {4}", 
-                reverseStringIgnoringSpecialChars, reverseString, reverseWordOrder, palindromeCheck, reverseWords);
+                reverseStringIgnoringSpecialChars, reverseEntireString, reverseWordOrder, palindromeCheck, reverseWords);
         }
 
         // Reverse entire string
-        public static string ReverseString(string str)
+        public static string ReverseEntireString(string str)
         {
             string given = str;
             string result = "";
@@ -37,7 +37,7 @@ namespace DataStructuresAndAlgorithms
         }
 
         // Reverse entire string - Alternative
-        public static string ReverseString(char[] str)
+        public static string ReverseEntireString(char[] str)
         {
             char[] given = str;
             string result = "";

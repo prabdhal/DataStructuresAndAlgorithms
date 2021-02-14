@@ -18,6 +18,7 @@ namespace DataStructuresAndAlgorithms
             string reverseWords = ReverseWords(word);
             CharacterOccuranceCounter(word);
             string removeDuplicateOccurances = RemoveDuplicateOccurances(word);
+            FindAllSubstrings(word);
 
             Console.WriteLine("Reverse String ignoring specials chars - {0}, Reverse entire string - {1}, Reverse words of an entire string - {2}, " +
                 "Palindrome check - {3}, Reverse words - {4}, Remove duplicate occurances - {5}",
@@ -205,6 +206,21 @@ namespace DataStructuresAndAlgorithms
             }
 
             return result;
+        }
+
+        // Find all possible substring of a given string
+        public static void FindAllSubstrings(string str)
+        {
+            string given = str;
+
+            // substring 1 value at a time all the way to length value
+            for (int i = 0; i < given.Length; i++)
+            {
+                for (int j = 1; j <= (given.Length - i); j++)
+                {
+                    Console.WriteLine("Substring - {0}", given.Substring(i, j));
+                }
+            }
         }
     }
 }

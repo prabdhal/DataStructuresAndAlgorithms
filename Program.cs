@@ -17,9 +17,11 @@ namespace DataStructuresAndAlgorithms
             bool palindromeCheck = PalindromeCheck(word);
             string reverseWords = ReverseWords(word);
             CharacterOccuranceCounter(word);
+            string removeDuplicateOccurances = RemoveDuplicateOccurances(word);
 
-            Console.WriteLine("Reverse String ignoring specials chars - {0}, Reverse entire string - {1}, Reverse words of an entire string - {2}, Palindrome check - {3}, Reverse words - {4}",
-                reverseStringIgnoringSpecialChars, reverseEntireString, reverseWordOrder, palindromeCheck, reverseWords);
+            Console.WriteLine("Reverse String ignoring specials chars - {0}, Reverse entire string - {1}, Reverse words of an entire string - {2}, " +
+                "Palindrome check - {3}, Reverse words - {4}, Remove duplicate occurances - {5}",
+                reverseStringIgnoringSpecialChars, reverseEntireString, reverseWordOrder, palindromeCheck, reverseWords, removeDuplicateOccurances);
         }
 
         // Reverse entire string
@@ -188,6 +190,21 @@ namespace DataStructuresAndAlgorithms
             {
                 Console.WriteLine("{0} occurances of the character {1}", c.Value, c.Key);
             }
+        }
+
+        // Remove duplicate characters from a string
+        public static string RemoveDuplicateOccurances(string str)
+        {
+            string given = str;
+            string result = "";
+
+            for (int i = 0; i < given.Length; i++)
+            {
+                if (result.Contains(given[i])) continue;
+                result += given[i];
+            }
+
+            return result;
         }
     }
 }

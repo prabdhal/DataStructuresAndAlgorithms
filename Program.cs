@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 
 namespace DataStructuresAndAlgorithms
@@ -15,8 +16,9 @@ namespace DataStructuresAndAlgorithms
             string reverseWordOrder = ReverseWordOrder(word);
             bool palindromeCheck = PalindromeCheck(word);
             string reverseWords = ReverseWords(word);
+            CharacterOccuranceCounter(word);
 
-            Console.WriteLine("Reverse String ignoring specials chars - {0}, Reverse entire string - {1}, Reverse words of an entire string - {2}, Palindrome check - {3}, Reverse words - {4}", 
+            Console.WriteLine("Reverse String ignoring specials chars - {0}, Reverse entire string - {1}, Reverse words of an entire string - {2}, Palindrome check - {3}, Reverse words - {4}",
                 reverseStringIgnoringSpecialChars, reverseEntireString, reverseWordOrder, palindromeCheck, reverseWords);
         }
 
@@ -161,6 +163,31 @@ namespace DataStructuresAndAlgorithms
             }
 
             return result;
+        }
+
+        // Count the occurence of each character in a string
+        public static void CharacterOccuranceCounter(string str)
+        {
+            Dictionary<char, int> charCount = new Dictionary<char, int>();
+
+            foreach (char c in str)
+            {
+                if (c != ' ')
+                {
+                    if (!charCount.ContainsKey(c))
+                    {
+                        charCount.Add(c, 1);
+                    }
+                    else
+                    {
+                        charCount[c]++;
+                    }
+                }
+            }
+            foreach (var c in charCount)
+            {
+                Console.WriteLine("{0} occurances of the character {1}", c.Value, c.Key);
+            }
         }
     }
 }

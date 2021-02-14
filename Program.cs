@@ -16,13 +16,28 @@ namespace DataStructuresAndAlgorithms
             string reverseWordOrder = ReverseWordOrder(word);
             bool palindromeCheck = PalindromeCheck(word);
             string reverseWords = ReverseWords(word);
-            CharacterOccuranceCounter(word);
             string removeDuplicateOccurances = RemoveDuplicateOccurances(word);
+
+            // Void Return-Type Methods
+            CharacterOccuranceCounter(word);
             FindAllSubstrings(word);
 
-            Console.WriteLine("Reverse String ignoring specials chars - {0}, Reverse entire string - {1}, Reverse words of an entire string - {2}, " +
-                "Palindrome check - {3}, Reverse words - {4}, Remove duplicate occurances - {5}",
-                reverseStringIgnoringSpecialChars, reverseEntireString, reverseWordOrder, palindromeCheck, reverseWords, removeDuplicateOccurances);
+            // Int Array Methods
+            int[] intAry = { 1, 2, 3, 4, 5 };
+            ShiftIntToLeft(intAry);
+
+            Console.Write("ReverseStringIgnoringSpecialChars - {0},\n" +
+                "ReverseEntireString - {1},\n" +
+                "ReverseWordOrder - {2},\n" +
+                "PalindromeCheck - {3},\n" +
+                "ReverseWords - {4},\n" +
+                "RemoveDuplicateOccurances - {5}\n",
+                reverseStringIgnoringSpecialChars, 
+                reverseEntireString, 
+                reverseWordOrder, 
+                palindromeCheck, 
+                reverseWords, 
+                removeDuplicateOccurances);
         }
 
         // Reverse entire string
@@ -187,10 +202,12 @@ namespace DataStructuresAndAlgorithms
                     }
                 }
             }
+            Console.WriteLine("-----Character Occurances of the string '{0}'-----", str);
             foreach (var c in charCount)
             {
                 Console.WriteLine("{0} occurances of the character {1}", c.Value, c.Key);
             }
+            Console.WriteLine("-------------------------------");
         }
 
         // Remove duplicate characters from a string
@@ -213,6 +230,7 @@ namespace DataStructuresAndAlgorithms
         {
             string given = str;
 
+            Console.WriteLine("------The substrings for '{0}'------", given);
             // substring 1 value at a time all the way to length value
             for (int i = 0; i < given.Length; i++)
             {
@@ -221,6 +239,37 @@ namespace DataStructuresAndAlgorithms
                     Console.WriteLine("Substring - {0}", given.Substring(i, j));
                 }
             }
+            Console.WriteLine("-------------------------------", given);
         }
+
+        // Perform a left circular rotation of an array (shift characters to the left by 1)
+        public static void ShiftIntToLeft(int[] numbers)
+        {
+            int[] given = numbers;
+            int[] result = new int[numbers.Length];
+
+            // add all ints into result array starting from 2nd int
+            for (int i = 1; i < given.Length; i++)
+            {
+                result[i - 1] = given[i];
+            }
+
+            // add 1st int to the end of the result array
+            result[given.Length - 1] = given[0];
+
+            Console.Write("------Shift the int array [");
+            foreach (var num in numbers)
+            {
+                Console.Write("{0}", num);
+            }
+            Console.Write("] to the left by one------\n");
+            Console.Write("The output is ");
+            foreach (var num in result)
+            {
+                Console.Write("{0}", num);
+            }
+            Console.WriteLine("\n-------------------------------", given);
+        }
+
     }
 }

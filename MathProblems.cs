@@ -29,15 +29,6 @@ namespace Mathematical
 				}
 				Console.Write(" ");
 			}
-			
-			// print lengthOfPattern times amount of numbers then -1 and repeat until value 1 is reached
 		}
 	}
 }
-// 333222111
-// 332211
-// 321
-// 3
-
-// 2211
-// 21

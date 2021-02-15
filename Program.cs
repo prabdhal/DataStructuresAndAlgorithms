@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Collections.Generic;
+using Mathematical;
 
 namespace DataStructuresAndAlgorithms
 {
@@ -8,6 +9,7 @@ namespace DataStructuresAndAlgorithms
     {
         static void Main(string[] args)
         {
+            
             Console.WriteLine("Please enter a word...");
             string word = Console.ReadLine();
 

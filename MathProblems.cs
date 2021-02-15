@@ -6,24 +6,38 @@ namespace Mathematical
 {
 	class MathProblems
 	{
-		public static void PrintPat(int lengthOfPattern)
+		public static void PrintPat(int N)
 		{
-			if (lengthOfPattern < 1 || lengthOfPattern > 40)
+			if (N < 1 || N > 40)
 			{
 				Console.WriteLine("lengthOfPattern value must be between 1 to 40");
 				return;
 			}
 
-			int temp = lengthOfPattern;
-			for (int i = lengthOfPattern; i > 0; i--)
+			int x = N;
+
+			for (int i = N; i > 0; i--)
 			{
-				temp -= lengthOfPattern - i;
-				for (int j = temp; j > 0; j--)
+				x = N;
+				for (int j = x; j > 0; j--)
 				{
-					Console.WriteLine(temp);
+					for (int k = i; k > 0; k--)
+					{
+						Console.Write(x);
+					}
+					x--;
 				}
-				Console.Write("");
+				Console.Write(" ");
 			}
+			
+			// print lengthOfPattern times amount of numbers then -1 and repeat until value 1 is reached
 		}
 	}
 }
+// 333222111
+// 332211
+// 321
+// 3
+
+// 2211
+// 21

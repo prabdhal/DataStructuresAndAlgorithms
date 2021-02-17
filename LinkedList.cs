@@ -77,19 +77,21 @@ namespace DataStructuresAndAlgorithms
                 AddTail(node);
                 return;
             }
-            // 
-            int halfLength = counter / 2;
-            Console.WriteLine(halfLength);
+            // divide counter by half and round up
+            float halfValue = (float)counter / 2;
+            int halfLength = (int)Math.Ceiling(halfValue);
 
             counter = 1; 
             Node nodeBeforeHalf = head;
 
+            // exit loop after approaching middle value
             while (counter != halfLength)
             {
                 nodeBeforeHalf = nodeBeforeHalf.next;
                 counter++;
             }
 
+            // insert node into middle
             Node temp = nodeBeforeHalf.next;
             nodeBeforeHalf.next = node;
             node.next = temp;

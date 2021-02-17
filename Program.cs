@@ -15,11 +15,13 @@ namespace DataStructuresAndAlgorithms
 			Node node3 = new Node(3);
 			Node node4 = new Node(4);
 			Node node5 = new Node(5);
+			Node node6 = new Node(10);
 			list.AddTail(node1);
 			list.AddTail(node2);
 			list.AddTail(node3);
 			list.AddTail(node4);
 			list.AddTail(node5);
+			list.AddMiddle(node6);
 			list.PrintNodes();
 
 			MathProblems.PrintPat(3);

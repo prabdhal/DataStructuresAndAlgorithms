@@ -59,6 +59,34 @@ namespace DataStructuresAndAlgorithms
             }
         }
 
+        public void RemoveTail()
+        {
+            if (head == null) return;
+
+            Node currentNode = head;
+            int counter = 1;
+
+            while (currentNode.next != null)
+            {
+                currentNode = currentNode.next;
+                counter++;
+            }
+
+            // get the position of 2nd last node
+            int lastNodeIndex = counter;
+            currentNode = head;
+            counter = 1;
+
+            // find 2nd last node using the index
+            while (counter != lastNodeIndex - 1)
+            {
+                currentNode = currentNode.next;
+                counter++;
+            }
+
+            // remove tail node 
+            currentNode.next = null;
+        }
 
         public void AddMiddle(Node node)
         {

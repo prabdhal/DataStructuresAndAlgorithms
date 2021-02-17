@@ -22,9 +22,9 @@ namespace DataStructuresAndAlgorithms
 			list.AddTail(node4);
 			list.AddTail(node5);
 			list.AddMiddle(node6);
-			list.RemoveHead();
-			list.RemoveHead();
-			list.RemoveHead();
+			list.RemoveTail();
+			list.RemoveTail();
+			list.RemoveTail();
 			list.PrintNodes();
 
 			MathProblems.PrintPat(3);

@@ -97,13 +97,15 @@ namespace DataStructuresAndAlgorithms
 
         public void PrintNodes()
         {
+            Console.WriteLine("------- Linked List Below -------");
             Node currentNode = head;
             while (currentNode.next != null)
             {
                 Console.Write(currentNode.value + ", ");
                 currentNode = currentNode.next;
             }
-            Console.Write(currentNode.value + ", ");
+            Console.Write(currentNode.value + "\n");
+            Console.WriteLine("------- Linked List Above -------");
         }
     }
 }

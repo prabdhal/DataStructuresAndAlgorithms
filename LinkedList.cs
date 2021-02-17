@@ -33,6 +33,15 @@ namespace DataStructuresAndAlgorithms
             }
         }
 
+        public void RemoveHead()
+        {
+            if (head == null) return;
+
+            Node temp = head.next;
+            head.next = null;
+            head = temp;
+        }
+
         public void AddTail(Node node)
         {
             if (head == null)
@@ -50,7 +59,7 @@ namespace DataStructuresAndAlgorithms
             }
         }
 
-        // 1234
+
         public void AddMiddle(Node node)
         {
             int counter = 1;
